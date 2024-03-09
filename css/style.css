@@ -1,4 +1,23 @@
 .header {
-    height: 100vh;
-    background: url();
+    height: 110vh;
+    background: url(../images/1615816388_56-p-fon-khaitek-70.jpg) no-repeat center;
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 86%, 54% 100%, 0 88%, 0 0) ;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+
+    color: #fff;
+    background: black;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
