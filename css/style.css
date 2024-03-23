@@ -110,6 +110,8 @@ a:hover {
     left: 42px;
     z-index: 1;
     border-radius: 20px;
+
+    transition: left .25s ease-in-out;
 }
 #lang:checked + .switcher:before {
     left: 7px;
@@ -126,6 +128,9 @@ a:hover {
     text-align: center;
     color: var(--color--green);
     z-index: 2;
+
+    
+    transition: color .25s ease-in-out;
 }
 .switcher span:first-child {
     color: #fff;
