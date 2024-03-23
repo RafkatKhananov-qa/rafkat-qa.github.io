@@ -1,7 +1,7 @@
 /* Переменные */
 :root {
     --color--green: #76bc21;
-    --background-black-opacity: rgb(0, 0, 0, 50%)
+    --background-black-opacity: rgb(0, 0, 0, .6)
 }
 
 
@@ -18,13 +18,31 @@ a:hover {
 /* Header стили */
 
 .header {
+    position: relative;
     height: 110vh;
-    background: url(../images/1615816388_56-p-fon-khaitek-70.jpg) no-repeat center;
-    background-size: cover;
-    clip-path: polygon(100% 0, 100% 86%, 54% 100%, 0 88%, 0 0) ;
+    clip-path: polygon(100% 0, 100% 86%, 54% 100%, 0 88%, 0 0);
+}
+
+.header__background {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    filter: blur(1px) opacity(0.9) saturate(200%);
+
+}
+
+.header__background-wrapper {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    
+    background: rgb(0, 0, 0, .5);
+    z-index: 1;
 }
 
 .header-top {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -32,6 +50,7 @@ a:hover {
 
     color: #fff;
     background: var(--background-black-opacity);
+    z-index: 2;
 }
 .header-top a {
     color: #fff;
@@ -62,7 +81,64 @@ a:hover {
     margin-right: 0;
 }
 
+.switcher {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 35px;
+    width: 90px;
+    padding: 0 10px;
+
+
+    background: var(--color--green);
+    border-radius: 20px;
+    opacity: .9;
+
+    transition: opacity .25s ease;
+    cursor: pointer;
+}
+.switcher:hover {
+    opacity: 1;
+}
+
+.switcher:before {
+    content: "";
+    width: 40px;
+    height: 30px;
+    background: #fff;
+    position: absolute;
+    left: 42px;
+    z-index: 1;
+    border-radius: 20px;
+}
+#lang:checked + .switcher:before {
+    left: 7px;
+}
+#lang:checked + .switcher span:first-child {
+    color: var(--color--green);
+}
+#lang:checked + .switcher span:last-child {
+    color: #fff;
+}
+
+.switcher span {
+    flex: 1 1 50%;
+    text-align: center;
+    color: var(--color--green);
+    z-index: 2;
+}
+.switcher span:first-child {
+    color: #fff;
+}
+#lang {
+    display: none;
+}
+
+
+
+
 .header-center {
+    position: relative;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -72,6 +148,8 @@ a:hover {
 
   
     color: #fff;
+
+    z-index: 2;
 }
 
 .header-center__wrapper {
